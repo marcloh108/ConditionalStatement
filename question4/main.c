@@ -1,30 +1,27 @@
 #include <stdio.h>
-#include <math.h>
 
-void main()
+int main()
 {
-   int a,b,c,d;
-   float x1,x2;
+    int sidea, sideb, sidec; //are three sides of a triangle
 
-   printf("Input the value of a,b & c : ");
-   scanf("%d%d%d",&a,&b,&c);
-   d=b*b-4*a*c;
-   if(d==0)
-   {
-     printf("Both roots are equal.\n");
-     x1=-b/(2.0*a);
-     x2=x1;
-     printf("First  Root Root1= %f\n",x1);
-     printf("Second Root Root2= %f\n",x2);
-   }
-   else if(d>0)
+    /*
+     * Reads all sides of a triangle
+     */
+    printf("Input three sides of triangle: ");
+    scanf("%d %d %d", &sidea, &sideb, &sidec);
+
+    if(sidea==sideb && sideb==sidec) //check whether all sides are equal
     {
-       printf("Both roots are real and diff-2\n");
-       x1=(-b+sqrt(d))/(2*a);
-       x2=(-b-sqrt(d))/(2*a);
-       printf("First  Root Root1= %f\n",x1);
-       printf("Second Root root2= %f\n",x2);
+        printf("This is an equilateral triangle.\n");
     }
-    else
-        printf("Root are imaginary;\nNo Solution. \n");
+    else if(sidea==sideb || sidea==sidec || sideb==sidec) //check whether two sides are equal
+    {
+        printf("This is an isosceles triangle.\n");
+    }
+    else //check whether no sides are equal
+    {
+        printf("This is a scalene triangle.\n");
+    }
+
+    return 0;
 }
