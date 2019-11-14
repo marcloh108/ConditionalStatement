@@ -1,27 +1,21 @@
 #include <stdio.h>
-
 int main()
 {
-    int sidea, sideb, sidec; //are three sides of a triangle
+    char sing_ch;
 
-    /*
-     * Reads all sides of a triangle
-     */
-    printf("Input three sides of triangle: ");
-    scanf("%d %d %d", &sidea, &sideb, &sidec);
+    printf("Input a character: ");
+    scanf("%c", &sing_ch);
 
-    if(sidea==sideb && sideb==sidec) //check whether all sides are equal
+    if((sing_ch>='a' && sing_ch<='z') || (sing_ch>='A' && sing_ch<='Z'))
     {
-        printf("This is an equilateral triangle.\n");
+        printf("This is an alphabet");
     }
-    else if(sidea==sideb || sidea==sidec || sideb==sidec) //check whether two sides are equal
+    else if(sing_ch>='0' && sing_ch<='9')
     {
-        printf("This is an isosceles triangle.\n");
+        printf("This is a digit");
     }
-    else //check whether no sides are equal
+    else
     {
-        printf("This is a scalene triangle.\n");
+        printf("This is a special character");
     }
-
-    return 0;
 }
