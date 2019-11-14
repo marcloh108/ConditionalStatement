@@ -1,41 +1,23 @@
 #include <stdio.h>
 
-int main() {
-  int num1,num2,option;
-  printf("Enter the first Integer :");
-  scanf("%d",&num1);
-  printf("Enter the second Integer :");
-  scanf("%d",&num2);
-
-    printf("\nInput your option :\n");
-    printf("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n");
-    scanf("%d",&option);
-    switch(option) {
-      case 1:
-        printf("The Addition of  %d and %d is: %d\n",num1,num2,num1+num2);
-        break;
-
-      case 2:
-        printf("The Substraction of %d  and %d is: %d\n",num1,num2,num1-num2);
-        break;
-
-      case 3:
-        printf("The Multiplication of %d  and %d is: %d\n",num1,num2,num1*num2);
-        break;
-
-      case 4:
-        if(num2==0) {
-          printf("The second integer is zero. Devide by zero.\n");
-        } else {
-          printf("The Division of %d  and %d is : %d\n",num1,num2,num1/num2);
+int main()
+{
+    int i, j, space, rows, k, t=1;
+    printf("Input number of rows : ");
+    scanf("%d", &rows);
+    space = rows+4-1;
+    for(i=1;i<=rows;i++)
+    {
+        for(k=space;k>=1;k--)
+        {
+        printf(" ");
         }
-        break;
 
-      case 5:
-        break;
-
-      default:
-        printf("Input correct option\n");
-        break;
+    for(j=1;j<=i;j++)
+    {
+        printf("%d ",t++);
+    }
+    printf("\n");
+    space--;
     }
 }
