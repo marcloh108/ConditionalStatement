@@ -1,37 +1,41 @@
 #include <stdio.h>
-#include <string.h>
-void main()
-{
-   int custid, conu;
-   float chg, surchg=0, gramt,netamt;
-   char connm[25];
 
-   printf("Input Customer ID :");
-   scanf("%d",&custid);
-   printf("Input the name of the customer :");
-   scanf("%s",connm);
-   printf("Input the unit consumed by the customer : ");
-   scanf("%d",&conu);
-   if (conu <200 )
-    chg = 1.20;
-   else	if (conu>=200 && conu<400)
-        chg = 1.50;
-    else if (conu>=400 && conu<600)
-            chg = 1.80;
-        else
-            chg = 2.00;
-   gramt = conu*chg;
-   if (gramt>300)
-    surchg = gramt*15/100.0;
-   netamt = gramt+surchg;
-   if (netamt  < 100)
-    netamt =100;
-   printf("\nElectricity Bill\n");
-   printf("Customer IDNO                       :%d\n",custid);
-   printf("Customer Name                       :%s\n",connm);
-   printf("Unit Consumed                       :%d\n",conu);
-   printf("Amount Charges @Rs. %4.2f  per unit :%8.2f\n",chg,gramt);
-   printf("Surchage Amount                     :%8.2f\n",surchg);
-   printf("Net Amount Paid By the Customer     :%8.2f\n",netamt);
+int main() {
+  int num1,num2,option;
+  printf("Enter the first Integer :");
+  scanf("%d",&num1);
+  printf("Enter the second Integer :");
+  scanf("%d",&num2);
 
+    printf("\nInput your option :\n");
+    printf("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n");
+    scanf("%d",&option);
+    switch(option) {
+      case 1:
+        printf("The Addition of  %d and %d is: %d\n",num1,num2,num1+num2);
+        break;
+
+      case 2:
+        printf("The Substraction of %d  and %d is: %d\n",num1,num2,num1-num2);
+        break;
+
+      case 3:
+        printf("The Multiplication of %d  and %d is: %d\n",num1,num2,num1*num2);
+        break;
+
+      case 4:
+        if(num2==0) {
+          printf("The second integer is zero. Devide by zero.\n");
+        } else {
+          printf("The Division of %d  and %d is : %d\n",num1,num2,num1/num2);
+        }
+        break;
+
+      case 5:
+        break;
+
+      default:
+        printf("Input correct option\n");
+        break;
+    }
 }
